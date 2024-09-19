@@ -64,7 +64,7 @@ Verilog Code
 4:1 MUX Gate-Level Implementation
 
 module mux_4to1 (
-    input wire [1:0] sel,    
+    input wire [1:0] sel, 
     input wire a, b, c, d,   
     output wire out          
 );
