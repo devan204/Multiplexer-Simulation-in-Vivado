@@ -88,7 +88,7 @@ module mux4_to_1_dataflow (
     input wire D,
     input wire S0,
     input wire S1,    
-    output wire Y
+    output wire y
 );
     assign Y = (~S1 & ~S0 & A) |
                (~S1 & S0 & B) |
