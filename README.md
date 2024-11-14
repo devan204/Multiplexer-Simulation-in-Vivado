@@ -60,7 +60,7 @@ Truth Table
 ![image](https://github.com/user-attachments/assets/c850506c-3f6e-4d6b-8574-939a914b2a5f)
 
 Verilog Code
-
+```
 4:1 MUX Gate-Level Implementation
 
 module mux_4to1 (
@@ -74,12 +74,12 @@ module mux_4to1 (
                  (sel == 2'b10) ? c :
                                   d;
 endmodule
-
+```
 ![Screenshot 2024-09-19 142021](https://github.com/user-attachments/assets/3ee86216-c93c-4ced-a7bb-32d2af9992b5)
    
 
 4:1 MUX Data Flow Implementation
-
+```
 // mux4_to_1_dataflow.v
 module mux4_to_1_dataflow (
     input wire A,
@@ -96,12 +96,12 @@ module mux4_to_1_dataflow (
                (S1 & S0 & D);
 
 endmodule 
-
+```
 
 ![Screenshot 2024-09-19 142717](https://github.com/user-attachments/assets/dd5789e4-feee-4029-aa34-50f9f0a9aae7)
 
 4:1 MUX Behavioral Implementation
-
+```
 // mux4_to_1_behavioral.v
 module mux4_to_1_behavioral (
     input wire A,
@@ -122,9 +122,9 @@ module mux4_to_1_behavioral (
         endcase
     end
 endmodule
-
+```
 4:1 MUX Structural Implementation
-
+```
 module mux2_to_1 (a,s,out);
 input s,[1:0]a;
 output out;
@@ -139,12 +139,12 @@ output out;
     mux2_to_1 mux1 (.a[0](a[2]), .a[1](a[3]), .s(s[0]), .out(mux_high));
     mux2_to_1 mux_final (.a[0](mux_low), .a[1](mux_high), .s(s[1]), .out(out));
 endmodule
-
+```
 OUTPUT: ![image](https://github.com/user-attachments/assets/3dd64fd0-0e6e-41bc-be72-6e715faebb3b)
 
 
 Testbench Implementation
-
+```
 `timescale 1ns / 1ps
 module mux4_to_1_tb;
 reg [3:0]a;
@@ -207,7 +207,7 @@ wire out;
         $monitor("Time=%0t | s[1]=%b s[0]=%b | Inputs: a[0]=%b a[1]=%b a[2]=%b a[3]=%b | out_gate=%b | out_dataflow=%b | out_behavioral=%b | out_structural=%b",$time, s[1], s[0], a[0], a[1], a[2], a[3], out_gate, out_dataflow, out_behavioral, out_structural);
     end
 endmodule
-
+```
 OUTPUT: ![image](https://github.com/user-attachments/assets/f82773df-dc8c-4791-8432-7383c6f3480a)
 
 
